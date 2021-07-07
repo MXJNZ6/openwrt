@@ -30,7 +30,7 @@ git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-ap
 svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-filebrowser package/luci-app-filebrowser
 svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-fileassistant package/luci-app-fileassistant
 #git clone https://github.com/garypang13/luci-app-eqos package/luci-app-eqos
-git clone https://github.com/frainzy1477/luci-app-clash.git package/luci-app-clash
+#git clone https://github.com/frainzy1477/luci-app-clash.git package/luci-app-clash
 #git clone -b master https://github.com/vernesong/OpenClash.git package/OpenClash
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
 git clone -b 18.06 https://github.com/garypang13/luci-theme-edge.git package/luci-theme-edge
