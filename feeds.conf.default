@@ -11,3 +11,4 @@ src-git lienol https://github.com/xiaorouji/openwrt-passwall
 #src-git NetSpeedTest  https://github.com/sirpdboy/NetSpeedTest
 #src-git GameAcc https://github.com/BCYDTZ/GameAcc
 src-git infinityfreedom https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom.git
+src-git xepher https://github.com/jerrykuku/luci-app-ttnode.git
