@@ -41,5 +41,5 @@ git clone https://github.com/chenhw2/luci-app-aliddns.git package/luci-app-alidd
 svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/luci-app-amlogic
 git clone https://github.com/lisaac/luci-app-dockerman package/luci-app-dockerman
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
-svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-ttnode package/luci-app-ttnode
+#svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-ttnode package/luci-app-ttnode
 svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-ipsec-server package/luci-app-ipsec-server
