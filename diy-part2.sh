@@ -30,3 +30,6 @@ sed -i "s|https.*/amlogic-s9xxx-openwrt|https://github.com/MXJNZ6/Flippy-D|g" pa
 sed -i "s|http.*/library|https://github.com/ophub/kernel/pub/stable|g" package/luci-app-amlogic/root/etc/config/amlogic
 sed -i "s|s9xxx_lede|s905d|g" package/luci-app-amlogic/root/etc/config/amlogic
 #sed -i "s|.img.gz|待定|g" package/luci-app-amlogic/root/etc/config/amlogic
+
+# 注视dockerd版本验证
+sed -i 's/^\s*$[(]call\sEnsureVendoredVersion/#&/' openwrt/feeds/packages/utils/dockerd/Makefile
