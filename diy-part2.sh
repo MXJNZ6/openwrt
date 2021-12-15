@@ -32,4 +32,4 @@ sed -i "s|s9xxx_lede|s905d|g" package/luci-app-amlogic/root/etc/config/amlogic
 #sed -i "s|.img.gz|待定|g" package/luci-app-amlogic/root/etc/config/amlogic
 
 # 注视dockerd版本验证
-sed -i 's/^\s*$[(]call\sEnsureVendoredVersion/#&/' openwrt/feeds/packages/utils/dockerd/Makefile
+sed -i 's/^\s*$[(]call\sEnsureVendoredVersion/#&/' feeds/packages/utils/dockerd/Makefile
