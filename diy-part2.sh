@@ -26,9 +26,8 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/M
 sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz-default-settings
 
 # 晶晨宝盒
-sed -i "s|https.*/amlogic-s9xxx-openwrt|https://github.com/MXJNZ6/Flippy-D|g" package/luci-app-amlogic/root/etc/config/amlogic
-sed -i "s|http.*/library|https://github.com/ophub/kernel/pub/stable|g" package/luci-app-amlogic/root/etc/config/amlogic
-sed -i "s|s9xxx_lede|s905d|g" package/luci-app-amlogic/root/etc/config/amlogic
+sed -i "s|https://github.com/breakings/OpenWrt|https://github.com/MXJNZ6/Flippy-D|g" package/luci-app-amlogic/root/etc/config/amlogic
+sed -i "s|ARMv8|s905d|g" package/luci-app-amlogic/root/etc/config/amlogic
 #sed -i "s|.img.gz|待定|g" package/luci-app-amlogic/root/etc/config/amlogic
 
 # 注视dockerd版本验证
