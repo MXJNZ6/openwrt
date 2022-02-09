@@ -40,7 +40,7 @@ svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/
 rm -rf package/lean/luci-app-dockerman
 git clone https://github.com/lisaac/luci-app-dockerman package/luci-app-dockerman
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
-#svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-ttnode package/luci-app-ttnode
+git clone https://github.com/thinktip/luci-theme-neobird.git package/luci-theme-neobird
 svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-ipsec-server package/luci-app-ipsec-server
 rm -rf package/lean/UnblockNeteaseMusic
 rm -rf package/lean/UnblockNeteaseMusic-Go
