@@ -42,3 +42,9 @@ git clone https://github.com/lisaac/luci-app-dockerman package/luci-app-dockerma
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 #svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-ttnode package/luci-app-ttnode
 svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-ipsec-server package/luci-app-ipsec-server
+rm -rf package/lean/UnblockNeteaseMusic
+rm -rf package/lean/UnblockNeteaseMusic-Go
+rm -rf package/lean/luci-app-unblockmusic
+git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
+rm -rf package/lean/luci-app-openvpn-server
+svn co https://github.com/kenzok8/small-package/trunk/luci-app-openvpn-server package/luci-app-openvpn-server
