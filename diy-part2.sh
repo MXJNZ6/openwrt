@@ -23,12 +23,15 @@ sed -i '/uci commit system/i\uci set system.@system[0].hostname='Unicorn'' packa
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
 # 设置密码为空（安装固件时无需密码登陆，然后自己修改想要的密码）
-sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz-default-settings
+sed -i '/CYXluq4wUazHjmCDBCqXF/d' package/lean/default-settings/files/zzz-default-settings
 
 # 晶晨宝盒
 sed -i "s|https://github.com/breakings/OpenWrt|https://github.com/MXJNZ6/Flippy-D|g" package/luci-app-amlogic/root/etc/config/amlogic
 sed -i "s|ARMv8|s905d|g" package/luci-app-amlogic/root/etc/config/amlogic
 #sed -i "s|.img.gz|待定|g" package/luci-app-amlogic/root/etc/config/amlogic
+
+# 设置ttyd免帐号登录，如若开启，进入OPENWRT后可能要重启一次才生效
+sed -i 's/\/bin\/login/\/bin\/login -f root/' /etc/config/ttyd
 
 # 注视dockerd版本验证
 sed -i 's/^\s*$[(]call\sEnsureVendoredVersion/#&/' feeds/packages/utils/dockerd/Makefile
