@@ -28,6 +28,7 @@ sed -i '/CYXluq4wUazHjmCDBCqXF/d' package/lean/default-settings/files/zzz-defaul
 # 晶晨宝盒
 sed -i "s|https://github.com/breakings/OpenWrt|https://github.com/MXJNZ6/Flippy-D|g" package/luci-app-amlogic/root/etc/config/amlogic
 sed -i "s|ARMv8|s905d|g" package/luci-app-amlogic/root/etc/config/amlogic
+sed -i "s|opt/kernel|kernel|g" package/luci-app-amlogic/root/etc/config/amlogic
 #sed -i "s|.img.gz|待定|g" package/luci-app-amlogic/root/etc/config/amlogic
 
 # 注视dockerd版本验证
