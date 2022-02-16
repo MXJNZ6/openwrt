@@ -76,7 +76,8 @@ jobs:
       run: cd openwrt && ./scripts/feeds update -a
       
     - name: Remove duplicate packages
-      run: chmod +x $DIY_P2_SH
+      run: |
+        chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
