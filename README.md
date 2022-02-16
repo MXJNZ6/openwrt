@@ -26,3 +26,4 @@ Utilities -> Disc -> blkid、fdisk、lsblk、parted
                                        -> kmod-mac80211
  Network  ->  WirelessAPD -> wpa-cli(先选下边的才会出现)
                           -> wpad-basic
+```
