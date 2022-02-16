@@ -31,5 +31,8 @@ sed -i "s|ARMv8|s905d|g" package/luci-app-amlogic/root/etc/config/amlogic
 sed -i "s|opt/kernel|kernel|g" package/luci-app-amlogic/root/etc/config/amlogic
 #sed -i "s|.img.gz|待定|g" package/luci-app-amlogic/root/etc/config/amlogic
 
-# 注视dockerd版本验证
-sed -i 's/^\s*$[(]call\sEnsureVendoredVersion/#&/' feeds/packages/utils/dockerd/Makefile
+# 注释dockerd版本验证
+#sed -i 's/^\s*$[(]call\sEnsureVendoredVersion/#&/' feeds/packages/utils/dockerd/Makefile
+
+# 下载btrfs-progs补丁
+wget -P feeds/packages/utils/btrfs-progs/patches https://github.com/kdave/btrfs-progs/commit/431dc7021c43e43658af436208182f8680e15fe2.patch
