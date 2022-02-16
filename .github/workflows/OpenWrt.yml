@@ -73,6 +73,9 @@ jobs:
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
+      
+    - name: Remove duplicate packages
+      run: cd openwrt && chmod +x D01.sh
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
