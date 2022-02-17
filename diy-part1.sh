@@ -27,7 +27,7 @@ svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-ipsec-server pac
 svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-fileassistant package/luci-app-fileassistant
 svn co https://github.com/kenzok8/small-package/trunk/luci-app-openvpn-server package/luci-app-openvpn-server
 svn co https://github.com/kenzok8/small-package/trunk/openvpn-easy-rsa-whisky package/openvpn-easy-rsa-whisky
-svn co https://github.com/Lienol/openwrt-luci/trunk/applications package/luci-app-ocserv
+svn co https://github.com/Lienol/openwrt-luci/trunk/applications package/ocserv
 
 #git clone https://github.com/frainzy1477/luci-app-clash.git package/luci-app-clash
 #git clone https://github.com/chenhw2/luci-app-aliddns.git package/luci-app-aliddns
