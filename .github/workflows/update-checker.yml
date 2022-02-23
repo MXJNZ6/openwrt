@@ -14,9 +14,9 @@ name: Update Checker
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_URL1: https://github.com/coolsnowwolf/luci
-  REPO_URL2: https://github.com/coolsnowwolf/packages.git
-  REPO_URL3: https://github.com/fw876/helloworld.git
-  REPO_URL4: https://github.com/xiaorouji/openwrt-passwall.git
+  REPO_URL2: https://github.com/coolsnowwolf/packages
+  REPO_URL3: https://github.com/fw876/helloworld
+  REPO_URL4: https://github.com/iwrt/luci-app-ikoolproxy
   REPO_BRANCH: master
   REPO_BRANCH2: main
   
