@@ -22,8 +22,6 @@ env:
   REPO_BRANCH3: master
   REPO_URL4: https://github.com/xiaorouji/openwrt-passwall.git
   REPO_BRANCH4: master
-  REPO_URL5: https://github.com/vernesong/OpenClash.git
-  REPO_BRANCH5: master
   
 on:
   workflow_dispatch:
@@ -44,7 +42,6 @@ jobs:
         git clone --depth 1 $REPO_URL2 -b $REPO_BRANCH2 .2
         git clone --depth 1 $REPO_URL3 -b $REPO_BRANCH3 .3
         git clone --depth 1 $REPO_URL4 -b $REPO_BRANCH4 .4
-        git clone --depth 1 $REPO_URL5 -b $REPO_BRANCH5 .5
         echo "::set-output name=commitHash::$(git rev-parse HEAD)"
 
     - name: Compare Commit Hash
