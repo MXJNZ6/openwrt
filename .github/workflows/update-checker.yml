@@ -14,15 +14,15 @@ name: Update Checker
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
-  REPO_URL1: https://github.com/coolsnowwolf/luci
+  REPO_URL1: https://github.com/coolsnowwolf/luci.git
   REPO_BRANCH1: master
-  REPO_URL2: https://github.com/coolsnowwolf/packages
+  REPO_URL2: https://github.com/coolsnowwolf/packages.git
   REPO_BRANCH2: master
-  REPO_URL3: https://github.com/fw876/helloworld
+  REPO_URL3: https://github.com/fw876/helloworld.git
   REPO_BRANCH3: master
-  REPO_URL4: https://github.com/xiaorouji/openwrt-passwall
+  REPO_URL4: https://github.com/xiaorouji/openwrt-passwall.git
   REPO_BRANCH4: master
-  REPO_URL5: https://github.com/vernesong/OpenClash
+  REPO_URL5: https://github.com/vernesong/OpenClash.git
   REPO_BRANCH5: master
   
 on:
