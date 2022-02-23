@@ -145,3 +145,10 @@ jobs:
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
+
+  over:
+    needs: [build]
+    runs-on: ubuntu-20.04
+    steps:
+    - name: TG notification #TG推送
+      run: curl "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" -d "chat_id=${{ secrets.TELEGRAM_CHAT_ID }}&text=主人，ARM64系统的rootfs文件编译以完成，可以开始打包了。"
