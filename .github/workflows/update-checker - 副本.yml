@@ -1,6 +1,7 @@
 name: Update Checker - 副本
 
 env:
+  FILE_NAME: MXJ
   REPO_BRANCH: master
   REPO_BRANCH_01: main
   REPO_URL_LEDE: https://github.com/coolsnowwolf/lede
@@ -9,7 +10,7 @@ env:
   REPO_URL_OPENCLASH: https://github.com/vernesong/OpenClash
   REPO_URL_PACKAGES: https://github.com/coolsnowwolf/packages
   REPO_URL_PASSWALL: https://github.com/xiaorouji/openwrt-passwall
-  REPO_URL_CESHI: https://github.com/ophub/luci-app-amlogic
+  REPO_URL_CESHI: https://github.com/iwrt/luci-app-ikoolproxy
 
 on:
   workflow_dispatch:
