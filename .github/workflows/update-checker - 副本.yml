@@ -45,10 +45,10 @@ jobs:
         token: ${{ secrets.RELEASES_TOKEN }}
         event-type: lede Source Code Update
 
-#    - name: Source Code Update notification
-#      if: steps.cacheHash.outputs.cache-hit != 'true'
-#      run: |
-#        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=${{ env.FILE_NAME }}lede源码更新了" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
+    - name: Source Code Update notification
+      if: steps.cacheHash.outputs.cache-hit != 'true'
+      run: |
+        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=${{ env.FILE_NAME }}lede源码更新了" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
 
   ssrplus:
     runs-on: ubuntu-latest
@@ -79,10 +79,10 @@ jobs:
         token: ${{ secrets.RELEASES_TOKEN }}
         event-type: ssrplus Source Code Update
 
-#    - name: Source Code Update notification
-#      if: steps.cacheHash.outputs.cache-hit != 'true'
-#      run: |
-#        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=${{ env.FILE_NAME }}ssrplus源码更新了" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
+    - name: Source Code Update notification
+      if: steps.cacheHash.outputs.cache-hit != 'true'
+      run: |
+        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=${{ env.FILE_NAME }}ssrplus源码更新了" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
 
   passwall:
     runs-on: ubuntu-latest
@@ -113,10 +113,10 @@ jobs:
         token: ${{ secrets.RELEASES_TOKEN }}
         event-type: passwall Source Code Update
 
-#    - name: Source Code Update notification
-#      if: steps.cacheHash.outputs.cache-hit != 'true'
-#      run: |
-#        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=${{ env.FILE_NAME }}passwall源码更新了" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
+    - name: Source Code Update notification
+      if: steps.cacheHash.outputs.cache-hit != 'true'
+      run: |
+        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=${{ env.FILE_NAME }}passwall源码更新了" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
 
   Openclash:
     runs-on: ubuntu-latest
@@ -147,10 +147,10 @@ jobs:
         token: ${{ secrets.RELEASES_TOKEN }}
         event-type: vssr Source Code Update
 
-#    - name: Source Code Update notification
-#      if: steps.cacheHash.outputs.cache-hit != 'true'
-#      run: |
-#        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=${{ env.FILE_NAME }}Openclash源码更新了" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
+    - name: Source Code Update notification
+      if: steps.cacheHash.outputs.cache-hit != 'true'
+      run: |
+        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=${{ env.FILE_NAME }}Openclash源码更新了" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
 
   LEDE_luci:
     runs-on: ubuntu-latest
@@ -174,10 +174,10 @@ jobs:
       run: |
         echo ${{ steps.getHash.outputs.commitHash }} | tee .commitHash
         
-#    - name: Source Code Update notification
-#      if: steps.cacheHash.outputs.cache-hit != 'true'
-#      run: |
-#        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=${{ env.FILE_NAME }}LEDE_luci源码更新了" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"      
+    - name: Source Code Update notification
+      if: steps.cacheHash.outputs.cache-hit != 'true'
+      run: |
+        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=${{ env.FILE_NAME }}LEDE_luci源码更新了" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"      
         
   LEDE_packages:
     runs-on: ubuntu-latest
@@ -201,7 +201,7 @@ jobs:
       run: |
         echo ${{ steps.getHash.outputs.commitHash }} | tee .commitHash
         
-#    - name: Source Code Update notification
-#      if: steps.cacheHash.outputs.cache-hit != 'true'
-#      run: |
-#        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=${{ env.FILE_NAME }}LEDE_packages源码更新了" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
+    - name: Source Code Update notification
+      if: steps.cacheHash.outputs.cache-hit != 'true'
+      run: |
+        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=${{ env.FILE_NAME }}LEDE_packages源码更新了" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
