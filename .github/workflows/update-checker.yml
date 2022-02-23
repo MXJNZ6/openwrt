@@ -50,7 +50,6 @@ jobs:
         path2: .2commitHash
         path3: .3commitHash
         path4: .4commitHash
-        path5: .5commitHash
         key: HEAD-${{ steps.getHash.outputs.commitHash }}
 
     - name: Save New Commit Hash
