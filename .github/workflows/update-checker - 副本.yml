@@ -9,6 +9,7 @@ env:
   REPO_URL_OPENCLASH: https://github.com/vernesong/OpenClash
   REPO_URL_PACKAGES: https://github.com/coolsnowwolf/packages
   REPO_URL_PASSWALL: https://github.com/xiaorouji/openwrt-passwall
+  REPO_URL_CESHI: https://github.com/ophub/luci-app-amlogic
 
 on:
   workflow_dispatch:
@@ -85,7 +86,7 @@ jobs:
     - name: Get Commit Hash
       id: getHash
       run: |
-        git clone --depth 1 $REPO_URL_PASSWALL -b $REPO_BRANCH_01 .
+        git clone --depth 1 $REPO_URL_CESHI -b $REPO_BRANCH_01 .
         echo "::set-output name=commitHash::$(git rev-parse HEAD)"
     - name: Compare Commit Hash
       id: cacheHash
