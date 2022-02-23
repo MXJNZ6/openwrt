@@ -14,14 +14,11 @@ name: Update Checker
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
-  REPO_URL1: https://github.com/coolsnowwolf/luci.git
-  REPO_BRANCH1: master
+  REPO_URL1: https://github.com/coolsnowwolf/luci
   REPO_URL2: https://github.com/coolsnowwolf/packages.git
-  REPO_BRANCH2: master
   REPO_URL3: https://github.com/fw876/helloworld.git
-  REPO_BRANCH3: master
   REPO_URL4: https://github.com/xiaorouji/openwrt-passwall.git
-  REPO_BRANCH4: master
+  REPO_BRANCH4: main
   
 on:
   workflow_dispatch:
@@ -38,9 +35,9 @@ jobs:
       id: getHash
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH .
-        git clone --depth 1 $REPO_URL1 -b $REPO_BRANCH1 .1
-        git clone --depth 1 $REPO_URL2 -b $REPO_BRANCH2 .2
-        git clone --depth 1 $REPO_URL3 -b $REPO_BRANCH3 .3
+        git clone --depth 1 $REPO_URL1 -b $REPO_BRANCH .1
+        git clone --depth 1 $REPO_URL2 -b $REPO_BRANCH .2
+        git clone --depth 1 $REPO_URL3 -b $REPO_BRANCH .3
         git clone --depth 1 $REPO_URL4 -b $REPO_BRANCH4 .4
         echo "::set-output name=commitHash::$(git rev-parse HEAD)"
 
