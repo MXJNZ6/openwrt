@@ -1,4 +1,4 @@
-name: Update Checker - 副本
+name: Update Checker
 
 env:
   FILE_NAME: MASTER
