@@ -189,7 +189,7 @@ jobs:
 
   over:
     needs: 
-     types: [lede, ssrplus, passwall, Openclash, LEDE_luci, LEDE_packages]
+     types: [lede,ssrplus,passwall,Openclash,LEDE_luci,LEDE_packages]
     runs-on: ubuntu-20.04
     steps:
     - name: Trigger build
