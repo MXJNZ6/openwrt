@@ -188,8 +188,7 @@ jobs:
         curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=${{ env.FILE_NAME }},LEDE_packages源码更新了" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
 
   over:
-    needs: 
-     types: [lede,ssrplus,passwall,Openclash,LEDE_luci,LEDE_packages]
+    needs: [lede,ssrplus,passwall,Openclash,LEDE_luci,LEDE_packages]
     runs-on: ubuntu-20.04
     steps:
     - name: Trigger build
