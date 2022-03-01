@@ -18,6 +18,9 @@ sed -i 's/luci-theme-bootstrap/luci-theme-opentomato/g' feeds/luci/collections/l
 # luci-app-openvpn
 sed -i 's/services/vpn/g'  feeds/luci/applications/luci-app-openvpn/luasrc/controller/openvpn.lua
 
+# luci-app-argon-config
+sed -i 's/system/services/g'  package/luci-app-argon-config/luasrc/controller/argon-config.lua
+
 # 晶晨宝盒
 sed -i "s|https://github.com/breakings/OpenWrt|https://github.com/MXJNZ6/Flippy-D|g" package/luci-app-amlogic/root/etc/config/amlogic
 sed -i "s|ARMv8|s905d|g" package/luci-app-amlogic/root/etc/config/amlogic
