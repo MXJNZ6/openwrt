@@ -22,7 +22,7 @@ sed -i 's/services/vpn/g'  feeds/luci/applications/luci-app-openvpn/luasrc/view/
 sed -i 's/^#~ \(.*msgid\)/\1/' feeds/luci/applications/luci-app-openvpn/po/zh-cn/openvpn.po
 sed -i 's/^#~ \(.*msgstr\)/\1/' feeds/luci/applications/luci-app-openvpn/po/zh-cn/openvpn.po
 sed -i '/msgid "Cryptography"/i\msgid "Switch to advanced configuration »"' feeds/luci/applications/luci-app-openvpn/po/zh-cn/openvpn.po
-sed -i '/msgid "Cryptography"/i\msgstr "切换到高级配置 »"' feeds/luci/applications/luci-app-openvpn/po/zh-cn/openvpn.po
+sed -i '/msgid "Cryptography"/i\msgstr "高级配置 »"' feeds/luci/applications/luci-app-openvpn/po/zh-cn/openvpn.po
 sed -i '/msgid "Cryptography"/{x;p;x;}' feeds/luci/applications/luci-app-openvpn/po/zh-cn/openvpn.po
 
 # luci-app-argon-config
