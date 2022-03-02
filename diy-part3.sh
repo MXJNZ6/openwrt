@@ -19,6 +19,8 @@ sed -i 's/luci-theme-bootstrap/luci-theme-opentomato/g' feeds/luci/collections/l
 sed -i 's/services/vpn/g'  feeds/luci/applications/luci-app-openvpn/luasrc/controller/openvpn.lua
 sed -i 's/services/vpn/g'  feeds/luci/applications/luci-app-openvpn/luasrc/model/cbi/openvpn.lua
 sed -i 's/services/vpn/g'  feeds/luci/applications/luci-app-openvpn/luasrc/view/openvpn/pageswitch.htm
+sed -i 's/^#~ \(.*msgid\)/\1/' feeds/luci/applications/luci-app-openvpn/po/zh-cn/openvpn.po
+sed -i 's/^#~ \(.*msgstr\)/\1/' feeds/luci/applications/luci-app-openvpn/po/zh-cn/openvpn.po
 
 # luci-app-argon-config
 sed -i 's/system/services/g'  package/luci-app-argon-config/luasrc/controller/argon-config.lua
