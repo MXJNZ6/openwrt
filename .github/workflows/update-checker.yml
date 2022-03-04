@@ -4,6 +4,7 @@ env:
   FILE_NAME: MASTER
   REPO_BRANCH: master
   REPO_BRANCH_01: main
+  REPO_BRANCH_02: packages
   REPO_URL_LEDE: https://github.com/coolsnowwolf/lede
   REPO_URL_LUCI: https://github.com/coolsnowwolf/luci
   REPO_URL_SSRPLUS: https://github.com/fw876/helloworld
@@ -87,7 +88,7 @@ jobs:
     - name: Get Commit Hash
       id: getHash
       run: |
-        git clone --depth 1 $REPO_URL_PASSWALL -b $REPO_BRANCH_01 .
+        git clone --depth 1 $REPO_URL_PASSWALL -b $REPO_BRANCH_02 .
         echo "::set-output name=commitHash::$(git rev-parse HEAD)"
     - name: Compare Commit Hash
       id: cacheHash
