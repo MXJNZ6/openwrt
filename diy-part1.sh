@@ -45,3 +45,4 @@ git clone https://github.com/thinktip/luci-theme-neobird.git package/luci-theme-
 git clone https://github.com/iwrt/luci-app-ikoolproxy.git package/luci-app-ikoolproxy
 git clone https://github.com/lisaac/luci-app-dockerman package/luci-app-dockerman
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
+git clone https://github.com/xiaorouji/openwrt-passwall2 package
