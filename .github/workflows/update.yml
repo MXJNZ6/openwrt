@@ -9,21 +9,19 @@ env:
   REPO_URL_ARGON: https://github.com/jerrykuku/luci-app-argon-config
   REPO_URL_OPENTOMATO: https://github.com/Leo-Jo-My/luci-theme-opentomato
   REPO_URL_MUSIC: https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic
-
-  REPO_BRANCH_01: dev
-  REPO_URL_PASSWALL2: https://github.com/xiaorouji/openwrt-passwall2
  
-  REPO_BRANCH_02: main
+  REPO_BRANCH_01: main
   REPO_URL_AMLOGIC: https://github.com/ophub/luci-app-amlogic
   REPO_URL_LIENOL: https://github.com/Lienol/openwrt-package
   REPO_URL_ALIYUN: https://github.com/messense/aliyundrive-webdav
   REPO_URL_IKOOLPROXY: https://github.com/iwrt/luci-app-ikoolproxy
   REPO_URL_NEOBIRD: https://github.com/thinktip/luci-theme-neobird
+  REPO_URL_PASSWALL2: https://github.com/xiaorouji/openwrt-passwall2
 
-  REPO_BRANCH_03: packages
+  REPO_BRANCH_02: packages
   REPO_URL_PASSWALL: https://github.com/xiaorouji/openwrt-passwall
   
-  REPO_BRANCH_04: openwrt-18.06
+  REPO_BRANCH_03: openwrt-18.06
   REPO_URL_ROSY: https://github.com/rosywrt/luci-theme-rosy
 
 on:
