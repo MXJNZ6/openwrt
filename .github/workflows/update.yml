@@ -3,11 +3,8 @@ name: Update
 env:
   FILE_NAME: MASTER
   REPO_BRANCH: master 
-  REPO_URL_LUCI: https://github.com/coolsnowwolf/luci
-  REPO_URL_SSRPLUS: https://github.com/fw876/helloworld
   REPO_URL_OAF: https://github.com/destan19/OpenAppFilter
   REPO_URL_OPENCLASH: https://github.com/vernesong/OpenClash
-  REPO_URL_PACKAGES: https://github.com/coolsnowwolf/packages
   REPO_URL_DOCKERMAN: https://github.com/lisaac/luci-app-dockerman
   REPO_URL_ARGON: https://github.com/jerrykuku/luci-app-argon-config
   REPO_URL_OPENTOMATO: https://github.com/Leo-Jo-My/luci-theme-opentomato
@@ -35,60 +32,6 @@ on:
     - cron: 0 7/8 * * *
 
 jobs:
-  luci:
-    runs-on: ubuntu-latest
-
-    steps:
-
-    - name: Get Commit Hash
-      id: getHash
-      run: |
-        git clone --depth 1 $REPO_URL_LUCI -b $REPO_BRANCH .
-        echo "::set-output name=commitHash::$(git rev-parse HEAD)"
-    - name: Compare Commit Hash
-      id: cacheHash
-      uses: actions/cache@v2
-      with:
-        path: .commitHash
-        key: HEAD-${{ steps.getHash.outputs.commitHash }}
-
-    - name: Save New Commit Hash
-      if: steps.cacheHash.outputs.cache-hit != 'true'
-      run: |
-        echo ${{ steps.getHash.outputs.commitHash }} | tee .commitHash
-
-    - name: Source Code Update notification
-      if: steps.cacheHash.outputs.cache-hit != 'true'
-      run: |
-        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=${{ env.FILE_NAME }},lede_luci源码更新了" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
-
-  ssrplus:
-    runs-on: ubuntu-latest
-
-    steps:
-
-    - name: Get Commit Hash
-      id: getHash
-      run: |
-        git clone --depth 1 $REPO_URL_SSRPLUS -b $REPO_BRANCH .
-        echo "::set-output name=commitHash::$(git rev-parse HEAD)"
-    - name: Compare Commit Hash
-      id: cacheHash
-      uses: actions/cache@v2
-      with:
-        path: .commitHash
-        key: HEAD-${{ steps.getHash.outputs.commitHash }}
-
-    - name: Save New Commit Hash
-      if: steps.cacheHash.outputs.cache-hit != 'true'
-      run: |
-        echo ${{ steps.getHash.outputs.commitHash }} | tee .commitHash
-
-    - name: Source Code Update notification
-      if: steps.cacheHash.outputs.cache-hit != 'true'
-      run: |
-        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=${{ env.FILE_NAME }},ssrplus源码更新了" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
-
   oaf:
     runs-on: ubuntu-latest
 
@@ -143,33 +86,6 @@ jobs:
       run: |
         curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=${{ env.FILE_NAME }},Openclash源码更新了" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
 
-  packages:
-    runs-on: ubuntu-latest
-
-    steps:
-
-    - name: Get Commit Hash
-      id: getHash
-      run: |
-        git clone --depth 1 $REPO_URL_PACKAGES -b $REPO_BRANCH .
-        echo "::set-output name=commitHash::$(git rev-parse HEAD)"
-    - name: Compare Commit Hash
-      id: cacheHash
-      uses: actions/cache@v2
-      with:
-        path: .commitHash
-        key: HEAD-${{ steps.getHash.outputs.commitHash }}
-
-    - name: Save New Commit Hash
-      if: steps.cacheHash.outputs.cache-hit != 'true'
-      run: |
-        echo ${{ steps.getHash.outputs.commitHash }} | tee .commitHash
-        
-    - name: Source Code Update notification
-      if: steps.cacheHash.outputs.cache-hit != 'true'
-      run: |
-        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=${{ env.FILE_NAME }},LEDE_packages源码更新了" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"      
-        
   dockerman:
     runs-on: ubuntu-latest
 
