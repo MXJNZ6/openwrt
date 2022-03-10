@@ -232,7 +232,7 @@ jobs:
     - name: Get Commit Hash
       id: getHash
       run: |
-        git clone --depth 1 $REPO_URL_AMLOGIC -b $REPO_BRANCH_02 .
+        git clone --depth 1 $REPO_URL_AMLOGIC -b $REPO_BRANCH_01 .
         echo "::set-output name=commitHash::$(git rev-parse HEAD)"
         
     - name: Compare Commit Hash
@@ -260,7 +260,7 @@ jobs:
     - name: Get Commit Hash
       id: getHash
       run: |
-        git clone --depth 1 $REPO_URL_LIENOL -b $REPO_BRANCH_02 .
+        git clone --depth 1 $REPO_URL_LIENOL -b $REPO_BRANCH_01 .
         echo "::set-output name=commitHash::$(git rev-parse HEAD)"
         
     - name: Compare Commit Hash
@@ -288,7 +288,7 @@ jobs:
     - name: Get Commit Hash
       id: getHash
       run: |
-        git clone --depth 1 $REPO_URL_ALIYUN -b $REPO_BRANCH_02 .
+        git clone --depth 1 $REPO_URL_ALIYUN -b $REPO_BRANCH_01 .
         echo "::set-output name=commitHash::$(git rev-parse HEAD)"
         
     - name: Compare Commit Hash
@@ -316,7 +316,7 @@ jobs:
     - name: Get Commit Hash
       id: getHash
       run: |
-        git clone --depth 1 $REPO_URL_IKOOLPROXY -b $REPO_BRANCH_02 .
+        git clone --depth 1 $REPO_URL_IKOOLPROXY -b $REPO_BRANCH_01 .
         echo "::set-output name=commitHash::$(git rev-parse HEAD)"
         
     - name: Compare Commit Hash
@@ -344,7 +344,7 @@ jobs:
     - name: Get Commit Hash
       id: getHash
       run: |
-        git clone --depth 1 $REPO_URL_NEOBIRD -b $REPO_BRANCH_02 .
+        git clone --depth 1 $REPO_URL_NEOBIRD -b $REPO_BRANCH_01 .
         echo "::set-output name=commitHash::$(git rev-parse HEAD)"
         
     - name: Compare Commit Hash
@@ -372,7 +372,7 @@ jobs:
     - name: Get Commit Hash
       id: getHash
       run: |
-        git clone --depth 1 $REPO_URL_PASSWALL -b $REPO_BRANCH_03 .
+        git clone --depth 1 $REPO_URL_PASSWALL -b $REPO_BRANCH_02 .
         echo "::set-output name=commitHash::$(git rev-parse HEAD)"
         
     - name: Compare Commit Hash
@@ -400,7 +400,7 @@ jobs:
     - name: Get Commit Hash
       id: getHash
       run: |
-        git clone --depth 1 $REPO_URL_ROSY -b $REPO_BRANCH_04 .
+        git clone --depth 1 $REPO_URL_ROSY -b $REPO_BRANCH_03 .
         echo "::set-output name=commitHash::$(git rev-parse HEAD)"
         
     - name: Compare Commit Hash
