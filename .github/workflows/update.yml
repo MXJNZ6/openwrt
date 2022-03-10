@@ -15,7 +15,7 @@ env:
  
   REPO_BRANCH_02: main
   REPO_URL_AMLOGIC: https://github.com/ophub/luci-app-amlogic
-  REPO_URL_LIENOL_IPK: https://github.com/Lienol/openwrt-package
+  REPO_URL_LIENOL: https://github.com/Lienol/openwrt-package
   REPO_URL_ALIYUN: https://github.com/messense/aliyundrive-webdav
   REPO_URL_IKOOLPROXY: https://github.com/iwrt/luci-app-ikoolproxy
   REPO_URL_NEOBIRD: https://github.com/thinktip/luci-theme-neobird
@@ -150,7 +150,7 @@ jobs:
     - name: Get Commit Hash
       id: getHash
       run: |
-        git clone --depth 1 $REPO_URL_OPENTOMAT -b $REPO_BRANCH .
+        git clone --depth 1 $REPO_URL_OPENTOMATO -b $REPO_BRANCH .
         echo "::set-output name=commitHash::$(git rev-parse HEAD)"
         
     - name: Compare Commit Hash
@@ -168,7 +168,7 @@ jobs:
     - name: Source Code Update notification
       if: steps.cacheHash.outputs.cache-hit != 'true'
       run: |
-        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=${{ env.FILE_NAME }},opentomat主题源码更新了" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
+        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=${{ env.FILE_NAME }},opentomato主题源码更新了" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
 
   MUSIC:
     runs-on: ubuntu-latest
