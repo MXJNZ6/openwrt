@@ -140,7 +140,7 @@ jobs:
       run: |
         curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=${{ env.FILE_NAME }},argon主题源码更新了" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
 
-  OPENTOMAT:
+  OPENTOMATO:
     runs-on: ubuntu-latest
 
     steps:
