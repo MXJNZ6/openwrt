@@ -51,3 +51,20 @@ git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 
 # Update feeds
 ./scripts/feeds update -a
+
+# 删除重复包
+rm -rf feeds/packages/net/smartdns
+rm -rf feeds/luci/themes/luci-theme-argon
+rm -rf feeds/packages/net/aliyundrive-webdav
+#rm -rf feeds/luci/applications/luci-app-ocserv
+rm -rf feeds/luci/applications/luci-app-openvpn
+#mv package/luci-app-ocserv feeds/luci/applications
+rm -rf feeds/luci/applications/luci-app-dockerman
+rm -rf feeds/packages/multimedia/UnblockNeteaseMusic
+rm -rf feeds/luci/applications/luci-app-unblockmusic
+rm -rf feeds/luci/applications/luci-app-openvpn-server
+rm -rf feeds/packages/multimedia/UnblockNeteaseMusic-Go
+rm -rf feeds/luci/applications/luci-app-aliyundrive-webdav
+
+# Install feeds
+./scripts/feeds install -a
