@@ -23,6 +23,7 @@ env:
   
   REPO_BRANCH_03: openwrt-18.06
   REPO_URL_ROSY: https://github.com/rosywrt/luci-theme-rosy
+  REPO_BRANCH_04: luci
 
 on:
   workflow_dispatch:
@@ -222,7 +223,7 @@ jobs:
     - name: Source Code Update notification
       if: steps.cacheHash.outputs.cache-hit != 'true'
       run: |
-        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=${{ env.FILE_NAME }},passwall二代目主程序源码更新了" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
+        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=${{ env.FILE_NAME }},passwall二代目源码更新了" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
 
   AMLOGIC:
     runs-on: ubuntu-latest
@@ -364,7 +365,7 @@ jobs:
       run: |
         curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=${{ env.FILE_NAME }},neobird主题源码更新了" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
 
-  PASSWALL:
+  PASSWALLYILAI:
     runs-on: ubuntu-latest
 
     steps:
@@ -419,3 +420,31 @@ jobs:
       if: steps.cacheHash.outputs.cache-hit != 'true'
       run: |
         curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=${{ env.FILE_NAME }},rosy主题源码更新了" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
+
+  PASSWALL:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Get Commit Hash
+      id: getHash
+      run: |
+        git clone --depth 1 $REPO_URL_PASSWALL -b $REPO_BRANCH_04 .
+        echo "::set-output name=commitHash::$(git rev-parse HEAD)"
+        
+    - name: Compare Commit Hash
+      id: cacheHash
+      uses: actions/cache@v2
+      with:
+        path: .commitHash
+        key: HEAD-${{ steps.getHash.outputs.commitHash }}
+
+    - name: Save New Commit Hash
+      if: steps.cacheHash.outputs.cache-hit != 'true'
+      run: |
+        echo ${{ steps.getHash.outputs.commitHash }} | tee .commitHash
+        
+    - name: Source Code Update notification
+      if: steps.cacheHash.outputs.cache-hit != 'true'
+      run: |
+        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=${{ env.FILE_NAME }},passwall一代目源码更新了" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
