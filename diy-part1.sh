@@ -59,6 +59,7 @@ rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf feeds/packages/net/aliyundrive-webdav
 #rm -rf feeds/luci/applications/luci-app-ocserv
 rm -rf feeds/luci/applications/luci-app-openvpn
+mv package/luci-app-openvpn feeds/luci/applications
 #mv package/luci-app-ocserv feeds/luci/applications
 rm -rf feeds/luci/applications/luci-app-dockerman
 rm -rf feeds/packages/multimedia/UnblockNeteaseMusic
