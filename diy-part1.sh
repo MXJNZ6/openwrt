@@ -48,3 +48,6 @@ git clone https://github.com/iwrt/luci-app-ikoolproxy.git package/luci-app-ikool
 git clone https://github.com/lisaac/luci-app-dockerman package/luci-app-dockerman
 git clone https://github.com/zxlhhyccc/luci-app-v2raya package/luci-app-v2raya
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
+
+# Update feeds
+./scripts/feeds update -a
