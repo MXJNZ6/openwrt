@@ -31,10 +31,10 @@ svn co https://github.com/messense/aliyundrive-webdav/trunk/openwrt package/luci
 svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-filebrowser package/luci-app-filebrowser
 #svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-ipsec-server package/luci-app-ipsec-server
 svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-fileassistant package/luci-app-fileassistant
-svn co https://github.com/Lienol/openwrt-luci/trunk/applications/luci-app-openvpn package/luci-app-openvpn
-svn co https://github.com/Lienol/openwrt-packages/branches/main/net/openvpn-easy-rsa package/openvpn-easy-rsa
-svn co https://github.com/Lienol/openwrt-package/branches//new-openvpn-luci/luci-app-openvpn-client package/luci-app-openvpn-client
-svn co https://github.com/Lienol/openwrt-package/branches//new-openvpn-luci/luci-app-openvpn-server package/luci-app-openvpn-server
+#svn co https://github.com/Lienol/openwrt-luci/trunk/applications/luci-app-openvpn package/luci-app-openvpn
+#svn co https://github.com/Lienol/openwrt-packages/branches/main/net/openvpn-easy-rsa package/openvpn-easy-rsa
+#svn co https://github.com/Lienol/openwrt-package/branches//new-openvpn-luci/luci-app-openvpn-client package/luci-app-openvpn-client
+#svn co https://github.com/Lienol/openwrt-package/branches//new-openvpn-luci/luci-app-openvpn-server package/luci-app-openvpn-server
 #svn co https://github.com/kenzok8/small-package/trunk/luci-app-openvpn-server package/luci-app-openvpn-server
 #svn co https://github.com/kenzok8/small-package/trunk/openvpn-easy-rsa-whisky package/openvpn-easy-rsa-whisky
 #svn co https://github.com/Lienol/openwrt-luci/trunk/applications package/ocserv
@@ -61,16 +61,16 @@ git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 rm -rf feeds/packages/net/smartdns
 rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf feeds/packages/net/aliyundrive-webdav
-rm -rf feeds/packages/net/openvpn-easy-rsa
+#rm -rf feeds/packages/net/openvpn-easy-rsa
 #rm -rf feeds/luci/applications/luci-app-ocserv
-rm -rf feeds/luci/applications/luci-app-openvpn
-mv package/luci-app-openvpn feeds/luci/applications
-mv package/openvpn-easy-rsa feeds/packages/net
+#rm -rf feeds/luci/applications/luci-app-openvpn
+#mv package/luci-app-openvpn feeds/luci/applications
+#mv package/openvpn-easy-rsa feeds/packages/net
 #mv package/luci-app-ocserv feeds/luci/applications
 rm -rf feeds/luci/applications/luci-app-dockerman
 rm -rf feeds/packages/multimedia/UnblockNeteaseMusic
 rm -rf feeds/luci/applications/luci-app-unblockmusic
-rm -rf feeds/luci/applications/luci-app-openvpn-server
+#rm -rf feeds/luci/applications/luci-app-openvpn-server
 rm -rf feeds/packages/multimedia/UnblockNeteaseMusic-Go
 rm -rf feeds/luci/applications/luci-app-aliyundrive-webdav
 
