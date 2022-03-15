@@ -65,6 +65,7 @@ rm -rf feeds/packages/net/openvpn-eagitsy-rsa
 #rm -rf feeds/luci/applications/luci-app-ocserv
 rm -rf feeds/luci/applications/luci-app-openvpn
 mv package/luci-app-openvpn feeds/luci/applications
+mv package/openvpn-eagitsy-rsa feeds/packages/net
 #mv package/luci-app-ocserv feeds/luci/applications
 rm -rf feeds/luci/applications/luci-app-dockerman
 rm -rf feeds/packages/multimedia/UnblockNeteaseMusic
