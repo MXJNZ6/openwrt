@@ -61,6 +61,7 @@ git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 rm -rf feeds/packages/net/smartdns
 rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf feeds/packages/net/aliyundrive-webdav
+rm -rf feeds/packages/net/openvpn-eagitsy-rsa
 #rm -rf feeds/luci/applications/luci-app-ocserv
 rm -rf feeds/luci/applications/luci-app-openvpn
 mv package/luci-app-openvpn feeds/luci/applications
