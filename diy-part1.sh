@@ -30,7 +30,7 @@ svn co https://github.com/linkease/nas-packages-luci/trunk/luci/luci-app-ddnsto 
 svn co https://github.com/messense/aliyundrive-webdav/trunk/openwrt package/luci-app-aliyundrive-webdav
 svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-filebrowser package/luci-app-filebrowser
 #svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-ipsec-server package/luci-app-ipsec-server
-svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-fileassistant package/luci-app-fileassistant
+#svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-fileassistant package/luci-app-fileassistant
 #svn co https://github.com/Lienol/openwrt-luci/trunk/applications/luci-app-openvpn package/luci-app-openvpn
 #svn co https://github.com/Lienol/openwrt-packages/branches/main/net/openvpn-easy-rsa package/openvpn-easy-rsa
 #svn co https://github.com/Lienol/openwrt-package/branches//new-openvpn-luci/luci-app-openvpn-client package/luci-app-openvpn-client
