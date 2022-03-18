@@ -53,6 +53,11 @@ git clone https://github.com/iwrt/luci-app-ikoolproxy.git package/luci-app-ikool
 git clone https://github.com/lisaac/luci-app-dockerman package/luci-app-dockerman
 git clone https://github.com/zxlhhyccc/luci-app-v2raya package/luci-app-v2raya
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
+git clone https://github.com/honwen/luci-app-xray.git package/luci-app-xray
+# 编译 po2lmo (如果有po2lmo可跳过)
+pushd package/luci-app-xray/tools/po2lmo
+make && sudo make install
+popd
 
 # Update feeds
 ./scripts/feeds update -a
