@@ -50,7 +50,7 @@ git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-ap
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 git clone https://github.com/thinktip/luci-theme-neobird.git package/luci-theme-neobird
 git clone https://github.com/iwrt/luci-app-ikoolproxy.git package/luci-app-ikoolproxy
-git clone https://github.com/lisaac/luci-app-dockerman package/luci-app-dockerman
+#git clone https://github.com/lisaac/luci-app-dockerman package/luci-app-dockerman
 git clone https://github.com/zxlhhyccc/luci-app-v2raya package/luci-app-v2raya
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 git clone https://github.com/honwen/luci-app-xray.git package/luci-app-xray
@@ -72,7 +72,7 @@ rm -rf feeds/packages/net/aliyundrive-webdav
 #mv package/luci-app-openvpn feeds/luci/applications
 #mv package/openvpn-easy-rsa feeds/packages/net
 #mv package/luci-app-ocserv feeds/luci/applications
-rm -rf feeds/luci/applications/luci-app-dockerman
+#rm -rf feeds/luci/applications/luci-app-dockerman
 rm -rf feeds/packages/multimedia/UnblockNeteaseMusic
 rm -rf feeds/luci/applications/luci-app-unblockmusic
 #rm -rf feeds/luci/applications/luci-app-openvpn-server
