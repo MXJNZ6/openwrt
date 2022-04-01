@@ -65,7 +65,7 @@ popd
 # 删除重复包
 rm -rf feeds/packages/net/smartdns
 rm -rf feeds/luci/themes/luci-theme-argon
-rm -rf feeds/packages/net/aliyundrive-webdav
+rm -rf feeds/packages/multimedia//aliyundrive-webdav
 #rm -rf feeds/packages/net/openvpn-easy-rsa
 #rm -rf feeds/luci/applications/luci-app-ocserv
 #rm -rf feeds/luci/applications/luci-app-openvpn
