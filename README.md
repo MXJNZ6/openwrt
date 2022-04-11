@@ -27,3 +27,4 @@ Utilities -> Disc -> blkid、fdisk、lsblk、parted
  Network  ->  WirelessAPD -> wpa-cli(先选下边的才会出现)
                           -> wpad-basic
 ```
+![插件](https://user-images.githubusercontent.com/53927877/162709444-0f048e24-1ad1-4d12-ba49-f39e6f4842d7.png)
