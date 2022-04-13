@@ -134,6 +134,6 @@ jobs:
     steps:
     - name: TG notification #TG推送
       run: curl "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" -d "chat_id=${{ secrets.TELEGRAM_CHAT_ID }}&text= Github云编译推送
-          编译时间：${{ env.DATE }}
-          OpenWrt 更新信息：${{ env.useVersionInfo }}
-          ARM64底包编译完成"
+%0A          编译时间：${{ env.DATE }}
+%0A          OpenWrt 更新信息：${{ env.useVersionInfo }}
+%0A          ARM64底包编译完成"
