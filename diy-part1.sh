@@ -43,8 +43,8 @@ svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-filebrowser pack
 
 #git clone https://github.com/frainzy1477/luci-app-clash.git package/luci-app-clash
 #git clone https://github.com/chenhw2/luci-app-aliddns.git package/luci-app-aliddns
-#git clone https://github.com/jerrykuku/luci-app-vssr.git  package/luci-app-vssr
-#git clone https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb
+git clone https://github.com/jerrykuku/luci-app-vssr.git  package/luci-app-vssr
+git clone https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb
 git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
 git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
