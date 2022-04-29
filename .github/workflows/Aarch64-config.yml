@@ -1,6 +1,6 @@
 # config在线生成项目
 
-name: config generation
+name: CONFIG Generation
 
 on:
   repository_dispatch:
