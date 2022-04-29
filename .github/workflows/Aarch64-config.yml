@@ -76,11 +76,11 @@ jobs:
       run: |
         cd openwrt
         ls -a
-        sudo mkdir Aarch64config
+        sudo mkdir ${{ env.CONFIG }}config
         ls -a
-        mv .config Aarch64.config
-        sudo cp Aarch64.config Aarch64config/
-        cd Aarch64config
+        mv .config ${{ env.CONFIG }}.config
+        sudo cp ${{ env.CONFIG }}.config ${{ env.CONFIG }}config/
+        cd ${{ env.CONFIG }}config
         ls -a
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "::set-output name=status::success"
