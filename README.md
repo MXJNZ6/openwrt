@@ -2,6 +2,12 @@
  
 [![Build OpenWrt](https://github.com/MXJNZ6/openwrt/actions/workflows/OpenWrt.yml/badge.svg)](https://github.com/MXJNZ6/openwrt/actions/workflows/OpenWrt.yml)
 ```
+1.Config Generation.yml是config在线生成流程，需要启动时设置ssh为true
+2.Delete-older-releases-artifacts.yml是删除旧的工作流程和releases
+3.OpenWrt.yml是云编译工作流程
+4.update-checker.yml是更新检测流程
+```
+```
 编译大概基本流程：
 1.安装编译环境
 2.拉取源码
