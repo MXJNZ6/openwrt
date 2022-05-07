@@ -2,6 +2,17 @@
  
 [![Build OpenWrt](https://github.com/MXJNZ6/openwrt/actions/workflows/OpenWrt.yml/badge.svg)](https://github.com/MXJNZ6/openwrt/actions/workflows/OpenWrt.yml)
 ```
+编译大概基本流程：
+1.安装编译环境
+2.拉取源码
+3.更新feeds
+4.拉取自定义插件
+5.安装feeds
+6.选择插件
+7.下载dl包
+8.开始编译
+```
+```
 Target System  ->  QEMU ARM Virtual Machine 
 Subtarget ->  QEMU ARMv8 Virtual Machine (cortex-a53)
 Target Profile  ->  Default
