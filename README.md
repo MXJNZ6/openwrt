@@ -1,6 +1,6 @@
 # OpenWrt-DI
  
-[![Build OpenWrt](https://github.com/MXJNZ6/openwrt/actions/workflows/OpenWrt.yml/badge.svg)](https://github.com/MXJNZ6/openwrt/actions/workflows/OpenWrt.yml)
+[![Build OpenWrt](https://github.com/MXJNZ6/openwrt/actions/workflows/OpenWrt.yml/badge.svg)](https://github.com/MXJNZ6/openwrt/actions/workflows/OpenWrt.yml)  
 1.Config Generation.yml是config在线生成流程，需要启动时设置ssh为true。如果需要把生成的config文件上传至releases需要在Settings-Secrets-Actions里添加GITHUB_TOKEN变量  
 2.Delete-older-releases-artifacts.yml是删除旧的工作流程和releases。同样需要GITHUB_TOKEN变量  
 3.OpenWrt.yml是云编译工作流程。同样需要GITHUB_TOKEN变量  
