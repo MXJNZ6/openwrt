@@ -76,3 +76,6 @@ sed -i 's/services/nas/g' package/luci-app-aliyundrive-webdav/luci-app-aliyundri
 # 修改插件名字
 sed -i 's/"阿里云盘 WebDAV"/"阿里云盘"/g' package/luci-app-aliyundrive-webdav/luci-app-aliyundrive-webdav/po/zh-cn/aliyundrive-webdav.po
 sed -i 's/WireGuard 状态/WireGuard/g' feeds/luci/applications/luci-app-wireguard/po/zh-cn/wireguard.po
+
+[ -e files ] && mv files openwrt/files
+[ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
