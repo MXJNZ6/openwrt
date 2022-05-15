@@ -13,6 +13,7 @@ env:
   DIY_SH: diy-arm64.sh
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
+  CONFIG: Aarch64
   TZ: Asia/Shanghai
 
 jobs:
@@ -84,6 +85,7 @@ jobs:
         tar -zcvf F-AllPackages.tar.gz ./*
         cp F-AllPackages.tar.gz $GITHUB_WORKSPACE/openwrt/bin/targets/*/*
         cd $GITHUB_WORKSPACE/openwrt/bin/targets/*/*
+        sudo cp $GITHUB_WORKSPACE/openwrt/.config $PWD/${{ env.CONFIG }}.config
         rm -rf packages
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "::set-output name=status::success"
