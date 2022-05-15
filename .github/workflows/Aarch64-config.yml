@@ -1,6 +1,6 @@
 # config在线生成项目
 
-name: Config Generation
+name: Aarch64-config
 
 on:
   repository_dispatch:
@@ -55,7 +55,7 @@ jobs:
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_SH
         cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P1_SH
+        $GITHUB_WORKSPACE/$DIY_SH
 
     - name: SSH链接管理
       uses: P3TERX/ssh2actions@v1.0.0
