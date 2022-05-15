@@ -15,6 +15,9 @@ sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.de
 sed -i '$a src-git xiaorouji https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
 sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall;luci' feeds.conf.default
 
+# 切换内核版本
+sed -i 's/KERNEL_PATCHVER:=5.15/KERNEL_PATCHVER:=5.4/g' ./target/linux/x86/Makefile
+
 # 修改openwrt登陆地址,把下面的192.168.2.22修改成你想要的就可以了
 sed -i 's/192.168.1.1/10.1.1.10/g' package/base-files/files/bin/config_generate
 
