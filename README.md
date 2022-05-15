@@ -1,6 +1,5 @@
 # OpenWrt-DI
  
-[![Build OpenWrt](https://github.com/MXJNZ6/openwrt/actions/workflows/OpenWrt.yml/badge.svg)](https://github.com/MXJNZ6/openwrt/actions/workflows/OpenWrt.yml)  
 ```
 1、Fork本仓库，在仓库Settings
                       -Actions
