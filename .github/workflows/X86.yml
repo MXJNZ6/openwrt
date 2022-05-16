@@ -96,26 +96,21 @@ jobs:
       uses: actions/upload-artifact@main
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+        name: OpenWrt_${{ env.FILE_NAME }}_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
 
-    - name: Generate release tag
-      id: tag
-      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
-      run: |
-        echo "::set-output name=release_tag::$(date +"%Y.%m.%d-%H%M")"
-        touch release.txt
-        echo "::set-output name=status::success"
-
-    - name: Upload firmware to release
-      uses: softprops/action-gh-release@v1
-      if: steps.tag.outputs.status == 'success' && !cancelled()
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Create release
+      id: release
+      uses: ncipollo/release-action@v1
       with:
-        tag_name: ${{ steps.tag.outputs.release_tag }}
-        body_path: release.txt
-        files: ${{ env.FIRMWARE }}/*
+        name: R${{ env.DATE }} for ${{ env.FILE_NAME }}
+        allowUpdates: true
+        tag: ${{ env.FILE_NAME }}
+        commit: main
+        token: ${{ secrets.GITHUB_TOKEN }}
+        body: |
+          This is OpenWrt firmware for ${{ env.FILE_NAME }}
+        artifacts: ${{ env.FIRMWARE }}/*
 
 #  over:
 #    needs: [build]
