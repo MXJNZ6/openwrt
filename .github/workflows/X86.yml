@@ -13,7 +13,7 @@ env:
   DIY_SH: diy-X86.sh
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
-  CONFIG: X86
+  FILE_NAME: X86
   TZ: Asia/Shanghai
 
 jobs:
