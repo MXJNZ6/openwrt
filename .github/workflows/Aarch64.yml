@@ -13,7 +13,7 @@ env:
   DIY_SH: diy-arm64.sh
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
-  CONFIG: Aarch64
+  FILE_NAME: Aarch64
   TZ: Asia/Shanghai
 
 jobs:
@@ -82,26 +82,12 @@ jobs:
       id: organize
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
       run: |
-        sudo chmod  -R 777 /opt
         cd $GITHUB_WORKSPACE/openwrt/bin/packages
         tar -zcvf F-AllPackages.tar.gz ./*
-        cd $GITHUB_WORKSPACE/opt
-        sudo svn co https://github.com/ophub/kernel/trunk/pub/stable kernel
-        git clone https://github.com/unifreq/openwrt_packit
-        sudo cp $GITHUB_WORKSPACE/5.15/whoami $GITHUB_WORKSPACE/optopenwrt_packit
-        sudo cp $GITHUB_WORKSPACE/openwrt/bin/targets/armvirt/64/openwrt-armvirt-64-default-rootfs.tar.gz $GITHUB_WORKSPACE/opt/openwrt_packit
-        cd /openwrt_packit
-        mkdir /tmp
-        sudo mount -t tmpfs  none  $GITHUB_WORKSPACE/opt/openwrt_packit/tmp
-        sudo ./mk_s905d_n1.sh
-        rm -rf whoami
-        sudo cp $GITHUB_WORKSPACE/5.17/whoami $GITHUB_WORKSPACE/optopenwrt_packit
-        sudo ./mk_s905d_n1.sh
-        cd output
-        sudo pigz -9 -p 2 *
-        sudo cp $GITHUB_WORKSPACE/openwrt/.config $GITHUB_WORKSPACE/opt/openwrt_packit/output/${{ env.CONFIG }}.config
-        sudo cp files/openwrt-update-amlogic output/openwrt-update-amlogic
-        sudo cp $GITHUB_WORKSPACE/openwrt/bin/packages/F-AllPackages.tar.gz $GITHUB_WORKSPACE/opt/openwrt_packit/output/F-AllPackages.tar.gz
+        cp F-AllPackages.tar.gz $GITHUB_WORKSPACE/openwrt/bin/targets/*/*
+        cd $GITHUB_WORKSPACE/openwrt/bin/targets/*/*
+        sudo cp $GITHUB_WORKSPACE/openwrt/.config $PWD/${{ env.FILE_NAME }}.config
+        rm -rf packages
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "::set-output name=status::success"
 
@@ -113,26 +99,21 @@ jobs:
       uses: actions/upload-artifact@main
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+        name: OpenWrt_${{ env.CONFIG }}_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
 
-    - name: Generate release tag
-      id: tag
-      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
-      run: |
-        echo "::set-output name=release_tag::$(date +"%Y.%m.%d-%H%M")"
-        touch release.txt
-        echo "::set-output name=status::success"
-
-    - name: Upload firmware to release
-      uses: softprops/action-gh-release@v1
-      if: steps.tag.outputs.status == 'success' && !cancelled()
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Create release
+      id: release
+      uses: ncipollo/release-action@v1
       with:
-        tag_name: ${{ steps.tag.outputs.release_tag }}
-        body_path: release.txt
-        files: ${{ env.FIRMWARE }}/*
+        name: R${{ env.DATE }} for ${{ env.FILE_NAME }}
+        allowUpdates: true
+        tag: ${{ env.FILE_NAME }}
+        commit: main
+        token: ${{ secrets.GITHUB_TOKEN }}
+        body: |
+          This is OpenWrt firmware for ${{ env.FILE_NAME }}
+        artifacts: ${{ env.FIRMWARE }}/*
 
 #  over:
 #    needs: [build]
