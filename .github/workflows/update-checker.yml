@@ -3,7 +3,7 @@ name: Update Checker
 env:
   FILE_NAME: MASTER
   REPO_BRANCH: master
-  REPO_URL_LEDE: https://github.com/coolsnowwolf/luci
+  REPO_URL_LEDE: https://github.com/coolsnowwolf/lede
 
 on:
   workflow_dispatch:
@@ -37,7 +37,7 @@ jobs:
       if: steps.cacheHash.outputs.cache-hit != 'true'
       uses: peter-evans/repository-dispatch@v2
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.ACTION_TOKEN }}
         event-type: lede Source Code Update
 
     - name: Source Code Update notification
