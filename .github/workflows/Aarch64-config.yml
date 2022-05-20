@@ -1,6 +1,6 @@
 # config在线生成项目
 
-name: Aarch64-config
+name: Config-Aarch64
 
 on:
   repository_dispatch:
