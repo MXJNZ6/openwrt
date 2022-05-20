@@ -1,6 +1,6 @@
 # config在线生成项目
 
-name: X86-config
+name: Config_X86
 
 on:
   repository_dispatch:
