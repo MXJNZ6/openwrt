@@ -1,4 +1,4 @@
-name: Build Aarch64 OpenWrt
+name: Build OpenWrt_Aarch64 
 
 on:
   repository_dispatch:
