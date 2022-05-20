@@ -3,7 +3,7 @@ name: Update Checker
 env:
   FILE_NAME: MASTER
   REPO_BRANCH: master
-  REPO_URL_LEDE: https://github.com/coolsnowwolf/lede
+  REPO_URL_LEDE: https://github.com/coolsnowwolf/luci
 
 on:
   workflow_dispatch:
