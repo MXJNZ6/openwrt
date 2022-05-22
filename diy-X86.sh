@@ -19,7 +19,7 @@ sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall;luci' 
 sed -i 's/KERNEL_PATCHVER:=5.15/KERNEL_PATCHVER:=5.4/g' ./target/linux/x86/Makefile
 
 # 修改openwrt登陆地址,把下面的192.168.2.22修改成你想要的就可以了
-sed -i 's/192.168.1.1/10.1.1.10/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/10.10.10.100/g' package/base-files/files/bin/config_generate
 
 # 修改主机名字，把Unicorn修改你喜欢的就行（不能纯数字或者使用中文）
 sed -i "/uci commit system/i\uci set system.@system[0].hostname='Unicorn'" package/lean/default-settings/files/zzz-default-settings
