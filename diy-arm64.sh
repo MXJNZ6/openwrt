@@ -51,10 +51,6 @@ git clone https://github.com/iwrt/luci-app-ikoolproxy.git package/luci-app-ikool
 git clone https://github.com/zxlhhyccc/luci-app-v2raya package/luci-app-v2raya
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 git clone https://github.com/honwen/luci-app-xray.git package/luci-app-xray
-# 编译 po2lmo (如果有po2lmo可跳过)
-pushd package/luci-app-xray/tools/po2lmo
-make && sudo make install
-popd
 
 # Update feeds
 ./scripts/feeds update -a
@@ -72,8 +68,10 @@ rm -rf feeds/luci/applications/luci-app-aliyundrive-webdav
 # Install feeds
 ./scripts/feeds install -a
 
-# 修改 argon 为默认主题,可根据你喜欢的修改成其他的（不选择那些会自动改变为默认主题的主题才有效果）
-sed -i 's/luci-theme-bootstrap/luci-theme-neobird/g' feeds/luci/collections/luci/Makefile
+# 编译 po2lmo (如果有po2lmo可跳过)
+pushd package/luci-app-xray/tools/po2lmo
+make && sudo make install
+popd
 
 # 调整VPN服务到VPN菜单
 sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/controller/*.lua
