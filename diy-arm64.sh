@@ -44,7 +44,7 @@ git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.gi
 git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
 sed -i 's/system/services/g'  package/luci-app-argon-config/luasrc/controller/argon-config.lua
 
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
+#git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 git clone https://github.com/thinktip/luci-theme-neobird.git package/luci-theme-neobird
 #git clone https://github.com/lisaac/luci-app-dockerman package/luci-app-dockerman
 git clone https://github.com/zxlhhyccc/luci-app-v2raya package/luci-app-v2raya
@@ -56,7 +56,7 @@ git clone https://github.com/honwen/luci-app-xray.git package/luci-app-xray
 
 # 删除重复包
 rm -rf feeds/packages/net/smartdns
-rm -rf feeds/luci/themes/luci-theme-argon
+#rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf feeds/packages/multimedia/aliyundrive-webdav
 #rm -rf feeds/luci/applications/luci-app-dockerman
 rm -rf feeds/packages/multimedia/UnblockNeteaseMusic
